@@ -1,0 +1,76 @@
+# ==========================================
+# 1. Python & Environment
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+.venv/
+
+# ==========================================
+# 2. PyTorch & RL Models
+# ==========================================
+# Ignore heavy model weights and checkpoint files
+*.pth
+*.pt
+*.ckpt
+
+# ==========================================
+# 3. Data Directories (CRITICAL)
+# ==========================================
+# Ignore everything inside the data folders to prevent massive Git repos
+data/*
+!data/.gitkeep
+
+# Force Git to track the subdirectories by allowing their .gitkeep files
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+!data/checkpoints/
+!data/checkpoints/.gitkeep
+
+# ==========================================
+# 4. LaTeX / Paper Build Artifacts
+# ==========================================
+# Ignore LaTeX compilation junk, but keep the actual .tex and .bib files
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.bbl
+paper/*.blg
+paper/*.xdv
+
+# If your scripts auto-generate figures/tables every time, you can uncomment below to ignore them:
+# paper/figures/*.pdf
+# paper/figures/*.png
+# paper/tables/*.tex
+
+# ==========================================
+# 5. Jupyter Notebooks
+# ==========================================
+.ipynb_checkpoints/
+
+# ==========================================
+# 6. OS & Editor Specifics
+# ==========================================
+# Mac mini / macOS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+
+# VSCode / PyCharm
+.vscode/
+.idea/

@@ -1,0 +1,124 @@
+\documentclass[10pt, a4paper, oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{abstract}
+\usepackage{setspace}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\onehalfspacing
+\setlength{\parskip}{0.6em}
+
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example Proof Flow}
+
+\title{\Large Hybrid G\"odel-Fitch Approach via Scope-Constrained Reinforcement Learning: Integrating Certified Verification with Inductive Reasoning}
+\author{Research Proposal Specification}
+\date{February 25, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Automated Theorem Proving (ATP) in recursive domains like Peano Arithmetic (PA) faces dual challenges: search space explosion and logical grounding issues. This research proposes a neuro-symbolic framework integrating Fitch-style Natural Deduction with G\"odel-inspired Prime-Factor Embedding (PFE). Crucially, we incorporate the Rocq (Coq) Proof Assistant as a certified verification oracle and data generator. We introduce a Bi-directional Translation Layer (Parser) to bridge visual Fitch proofs and Rocq's formal type theory. By implementing a curriculum-based training pipeline guided by certified data, this system aims to achieve high search efficiency and generate human-readable, formally verified proofs.
+\end{abstract}
+
+\section{Introduction}
+
+The automation of mathematical reasoning, particularly in structural induction, remains a significant challenge. Purely neural approaches often lack a formal verification layer, leading to logically unsound results despite plausible appearances. Conversely, traditional symbolic ATPs guarantee correctness but struggle with scalability and human interpretability.
+
+This research bridges the gap by grounding the ATP process in Fitch-style Natural Deduction, providing a visual and hierarchical structure for reasoning. We explicitly model Fitch scopes to prune the search space for Reinforcement Learning (RL) agents. Furthermore, we integrate the Rocq Proof Assistant to serve as the ultimate gold standard for verification, ensuring that every generated proof is not only intuitively correct but also mechanically certified against the rigorous standards of the Calculus of Inductive Constructions (CiC).
+
+\section{System Architecture and Theoretical Framework}
+
+\subsection{Overall Research Pipeline}
+
+Our system operates in three integrated phases: Offline Data Generation via Rocq, Online RL Training via the Fitch Environment, and Certified Verification via the Rocq Kernel.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.95\textwidth]{diagrams/proposal/full_research_flowchart.png}
+    \caption{Integrated Research Architecture Flowchart. Phase 1 generates synthetic data using Rocq. Phase 2 is the main RL loop where the agent interacts with the Fitch environment. Phase 3 provides certified feedback by translating Fitch proofs back into Rocq for type-checking.}
+    \label{fig:full_flowchart}
+\end{figure}
+
+\subsection{Scope-Constrained Logic: Fitch-style System}
+
+Fitch-style deduction utilizes nested boxes to denote subproofs, defining strict accessibility rules for premises. Our Fitch Symbolic Environment enforces these rules during exploration, acting as a fast filter for invalid logical moves. A premise is accessible only if it resides in the current scope or a direct ancestor scope, preventing assumptions from leaking into global contexts.
+
+\subsection{Arithmetization: Prime-Factor Embedding (PFE)}
+
+To enable neural networks to perceive logical structure, we map symbols to unique primes (e.g., universal quantification to 7, addition to 31). Formulas are encoded into high-dimensional vectors representing the structural depth of their G\"odel numbers. This provides a unique arithmetic signature for every logical state.
+
+\section{Formal Translation Layer: The Bi-directional Parser}
+
+A critical innovation is the Bi-directional Parser that bridges the semantic gap between visual Fitch structures and Rocq's formal Gallina language.
+
+\subsection{Backward Parser: Rocq to Fitch}
+
+Used in Phase 1 for data generation. It deconstructs Rocq tactic scripts (e.g., intros, induction) and maps them to equivalent Fitch scope operations. For instance, an induction tactic is decomposed into the opening of a base case subproof and an inductive step subproof, generating gold standard PFE sequences for imitation learning.
+
+\subsection{Forward Parser: Fitch to Rocq}
+
+Used in Phase 3 for certification. It translates agent-generated Fitch proofs into runnable Gallina scripts. A Fitch subproof assuming a property P(k) is translated into a Rocq section requiring intros k Hk. Success in Rocq's type-checking provides the final certified reward signal.
+
+\section{Methodology: Curriculum and Execution}
+
+\subsection{Curriculum Learning Strategy}
+
+The agent is trained through a four-stage curriculum, transitioning from basic grammar to autonomous discovery:
+\begin{enumerate}
+    \item Stage 1: Propositional Grammar. Mastering subproof boxes for basic connectives.
+    \item Stage 2: Predicate Logic. Handling quantifiers and variable substitution via PFE.
+    \item Stage 3: Structural Induction. Instantiating the induction template (Base Case / Inductive Step).
+    \item Stage 4: Peano Synthesis. Integrating PA axioms for complex arithmetic proofs.
+\end{enumerate}
+
+\subsection{Certified Execution Loop}
+
+\begin{algorithm}
+\caption{Hybrid G\"odel-Fitch-Rocq System Loop}
+\begin{algorithmic}[1]
+\State \textbf{Input:} Target Theorem T, Rocq Kernel K
+\State env $\leftarrow$ Initialize Fitch\_Environment(T)
+\While{not converged}
+    \State mask $\leftarrow$ env.Get\_Accessibility\_Mask() \Comment{Fitch Scoping}
+    \State state $\leftarrow$ Build\_NSG(env.history)
+    \State action $\leftarrow$ Sample(Policy(state, mask))
+    \State done $\leftarrow$ env.Step(action)
+    \If{done and env.proven}
+        \State rocq\_script $\leftarrow$ Forward\_Parser(env.history)
+        \State verified $\leftarrow$ K.Check(rocq\_script)
+        \If{verified} Reward $\leftarrow$ 100 \Comment{Certified Success}
+        \Else \ Reward $\leftarrow$ -50 \Comment{Logical Gap}
+        \EndIf
+    \EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\section{Conclusion}
+
+By fusing G\"odel's arithmetization, Fitch's structural scoping, and Rocq's certified verification, this research proposes a robust framework for neuro-symbolic reasoning. This approach ensures that the agent masters the grammar of logic before attempting complex arithmetic discovery.
+
+\begin{thebibliography}{9}
+\small
+\bibitem{fitch1952} F. B. Fitch, Symbolic Logic, 1952.
+\bibitem{rocq} The Rocq Development Team, The Rocq Proof Assistant, 2024.
+\end{thebibliography}
+
+\end{document}

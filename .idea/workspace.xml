@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="737d2dad-9ece-48d5-b7bf-e15ec6aa5870" name="Changes" comment="First commit.">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/01_pfe_encoding_test.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/evaluate_proof.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/generate_synthetic_data.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train_agent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/fitch_system.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/pfe_encoder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/vocabulary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/fitch_to_rocq.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/rocq_to_fitch.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rl/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rl/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rl/ppo_agent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rl/reward.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rules/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rules/propositional.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rules/quantifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pfe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_scoping.py" beforeDir="false" />
+    <list default="true" id="737d2dad-9ece-48d5-b7bf-e15ec6aa5870" name="Changes" comment="README.md update">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paper/diagrams/proposal/fitch_scope_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paper/diagrams/proposal/full_research_flowchart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paper/diagrams/proposal/pfe_embedding_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paper/proposal.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +27,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "jkmanyeEx"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jkmanyeEx&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/jkmanyeEx/godel_fitch_rl.git",
-    "accountId": "e21867fc-c282-4769-b4e3-d84932d134fa"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jkmanyeEx/godel_fitch_rl.git&quot;,
+    &quot;accountId&quot;: &quot;e21867fc-c282-4769-b4e3-d84932d134fa&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="3AENug849e6kJJEIN8l4NXmDnIo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,6 +53,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "LaTeX.main.executor": "Run",
+    "LaTeX.proposal.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.setup.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -82,6 +65,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/devmeko/Documents/KSA/godel_fitch_rl/paper/figures",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +81,61 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/paper/figures" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/paper/diagrams/proposal" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="LaTeX.proposal">
+    <configuration name="main" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" temporary="true">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <require-focus>true</require-focus>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <expand-macros-in-environment-variables>false</expand-macros-in-environment-variables>
+        <before-run-command />
+        <main-file>$PROJECT_DIR$/paper/main.tex</main-file>
+        <output-path>$PROJECT_DIR$/out</output-path>
+        <auxil-path>{projectDir}/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MODULE_SDK</latex-distribution>
+        <has-been-run>false</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="proposal" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" temporary="true">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <require-focus>true</require-focus>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <expand-macros-in-environment-variables>false</expand-macros-in-environment-variables>
+        <before-run-command />
+        <main-file>$PROJECT_DIR$/paper/proposal.tex</main-file>
+        <output-path>$PROJECT_DIR$/out</output-path>
+        <auxil-path>{projectDir}/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MODULE_SDK</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
     <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="godel_fitch_rl" />
       <option name="ENV_FILES" value="" />
@@ -128,6 +162,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="LaTeX.proposal" />
+        <item itemvalue="LaTeX.main" />
         <item itemvalue="Python.setup" />
       </list>
     </recent_temporary>
@@ -147,7 +183,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772153993850</updated>
-      <workItem from="1772153994854" duration="627000" />
+      <workItem from="1772153994854" duration="1292000" />
     </task>
     <task id="LOCAL-00001" summary="First commit.">
       <option name="closed" value="true" />
@@ -157,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772154225217</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="README.md update">
+      <option name="closed" value="true" />
+      <created>1772155172607</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772155172607</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +209,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit." />
+    <MESSAGE value="README.md update" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/godel_fitch_rl$setup.coverage" NAME="setup Coverage Results" MODIFIED="1772154030222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
