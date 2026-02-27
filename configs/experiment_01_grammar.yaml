@@ -1,0 +1,17 @@
+# Stage 1: Propositional Grammar Training Config
+experiment_name: "stage1_grammar_fitch"
+seed: 42
+
+environment:
+  max_proof_length: 50
+  enable_fitch_masking: true
+
+agent:
+  algorithm: "PPO"
+  learning_rate: 0.0003
+  # Mac mini ARM 칩을 위한 MPS 할당 설정
+  device: "mps" 
+
+reward:
+  rocq_verify_bonus: 100
+  step_penalty: -1

@@ -1,0 +1,6 @@
+name: godel_fitch
+channels:
+  - pytorch
+dependencies:
+  - python=3.11
+  - pytorch
